@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 
 readme = open(os.path.join(os.path.dirname(__file__), 'README.rst'), 'r')
@@ -17,7 +17,8 @@ setup(
     author_email='playpauseandstop@gmail.com',
     url='http://code.google.com/p/django-mediafiles/',
     download_url='http://django-mediafiles.googlecode.com/files/django-mediafiles-0.2.zip',
-    packages=['mediafiles', 'mediafiles.templatetags'],
+    include_package_data=True,
+    packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
